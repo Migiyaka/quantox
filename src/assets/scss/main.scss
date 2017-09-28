@@ -1,0 +1,31 @@
+@import '~bulma';
+
+body {
+    padding: 30px;
+    
+    .shop-list {
+        .sorting {
+            display: inline-block;
+            margin-bottom: 2em;
+            
+            .level-left {
+                margin-right: 1em;
+            }
+        }
+        
+        .shops {
+            .card-content {
+                .level-left {
+                    flex: 0 auto;
+                    margin-right: 1em;
+                }
+            }
+        }
+        
+        .shops-loading {
+            text-align: center;
+            font-size: 3em;
+            padding-top: 5em;
+        }
+    }
+}
