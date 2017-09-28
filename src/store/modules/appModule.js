@@ -5,11 +5,6 @@ const appModule = {
         geolocationLoaded: false,
         userPosition: {}  
     },
-    getters: {
-        getCoffeeShopCategoryId(state) {
-            return '4bf58dd8d48988d1e0931735';
-        }    
-    },
     actions: {
         getUserPosition(context) {
             if (navigator.geolocation) {
@@ -28,6 +23,13 @@ const appModule = {
             
             return context.dispatch('server/http', payload, { root: true })
                 .then(response => Promise.resolve(response.data.response.groups[0].items))
+                .catch(err => Promise.reject(err));
+        },
+        findShopInfo(context, { location, shopId }) {
+            const payload = { method: 'get', url: `venues/${shopId}?ll=${location}` };
+
+            return context.dispatch('server/http', payload, { root: true })
+                .then(response => Promise.resolve(response.data.response))
                 .catch(err => Promise.reject(err));
         }
     }  

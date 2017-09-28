@@ -21,11 +21,62 @@ body {
                 }
             }
         }
-        
-        .shops-loading {
-            text-align: center;
-            font-size: 3em;
-            padding-top: 5em;
+    }
+
+    .shops-loading {
+        text-align: center;
+        font-size: 3em;
+        padding-top: 5em;
+    }
+
+    .shop-details {
+        .slideshow {
+            overflow: hidden;
+            
+            .slideshow-inner {
+                display: flex;
+                align-items: center;
+                position: relative;
+                transition: all 0.5s;
+            }
+
+            .slideshow-dots {
+                position: absolute;
+                bottom: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+
+                .dot {
+                    width: 10px;
+                    height: 10px;
+                    float: left;
+                    margin: 0 10px;
+                    background-color: #fff;
+                    border: 1px solid #fff;
+                    border-radius: 50%;
+
+                    &.selected {
+                        background-color: #555;
+                    }
+                }
+            }
         }
+
+        .user-tips {
+            font-style: italic;
+            margin-top: 5em;
+
+            .subtitle, .tip-author {
+                font-style: normal;
+            }
+        }
+    }
+
+    .slide-enter-active, .slide-leave-active {
+        transition: all .5s;
+    }
+
+    .slide-enter-to, .slide-leave-to {
+        transform: translateX(-100%);
     }
 }

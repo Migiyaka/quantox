@@ -37,7 +37,7 @@ const serverModule = {
         http(context, { method, data, url }) {
             const urlWithAuth = `${url}${(url.indexOf('?') > 0) ? '&' : '?'}client_id=${context.getters.getClientId}&client_secret=${context.getters.getClientSecret}&v=${context.getters.getCurrentDate}`;
             const serverOptions = { method, data, url: urlWithAuth };
-            
+
             return context.state.server(serverOptions)
                 .then(response => Promise.resolve(response))
                 .catch(err => Promise.reject(err.response));

@@ -4,15 +4,18 @@ import ShopListPage from '../layout/ShopListPage.vue';
 import ShopDetailsPage from '../layout/ShopDetailsPage.vue';
 
 const router = new VueRouter({
-    mode: 'history',
     routes: [
         {
             path: '/',
             component: ShopListPage
         },
         {
-            path: '/details',
+            path: '/details/:shopId',
             component: ShopDetailsPage
+        },
+        {
+            path: '*',
+            redirect: '/'
         }
     ] 
 });
